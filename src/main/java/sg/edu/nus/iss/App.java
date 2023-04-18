@@ -59,5 +59,67 @@ public class App {
                 System.out.println("Seems like you are a boring person without hobby");
                 break;
         }
+
+
+        // Slide 19
+        Integer myAge = 0;
+        String inputAge = con.readLine("What is your age?");
+
+        myAge = Integer.parseInt(inputAge);
+
+        if (myAge >= 0 && myAge <= 2) {
+            System.out.println("you are a baby");
+        } else if (myAge > 2 && myAge <= 4) {
+            System.out.println("you are a toddler");
+        } else if (myAge > 4 && myAge <= 12) {
+            System.out.println("you are a child");
+        } else if (myAge > 12 && myAge < 19) {
+            System.out.println("You are a teen");
+        } else {
+            System.out.println("you are an adult");
+        }
+
+        // Slide 21 
+        Integer i = 0;
+        input = con.readLine("Type a phrase: ");
+
+        while (i < input.length() + 1) {
+            // do/process something here
+            // e.g. Clementi --> BeginIndex = 0, C  EndIndex = 0 C
+            // BeginIndex = 0, C   EndIndex = will increase based on 'i'
+            // substring(beginIndex, endIndex)
+            System.out.println(input.substring(0, i));
+
+            // i = i + 1 --> i++
+            // i = i - 1 --> i--
+            i++;
+        }
+
+
+        for (int idx = 0; idx < input.length() + 1; idx++) {
+            System.out.println(input.substring(0, idx));
+        }
+
+
+        // Slide 23
+        String[] todo = new String[5];
+
+        for(int pos = 0; pos < todo.length; pos++) {
+            input = con.readLine("Enter Todo task " + (pos + 1) + ": ");
+            todo[pos] = input;
+        }
+
+        for (int pos = 0; pos < todo.length; pos++) {
+            System.out.println("Task " + (pos + 1) + "--> " + todo[pos]);
+        }
+
+        // Slide 24
+        String strName = "NUS";
+
+        if (args.length > 0) {
+            strName = args[0];
+        }
+        System.out.println("Hello " + strName);
+
     }
 }
